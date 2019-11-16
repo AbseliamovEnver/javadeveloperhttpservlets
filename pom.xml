@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.enver</groupId>
+    <artifactId>javadeveloperhttpservlets</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <apache-commons.version>3.5</apache-commons.version>
+        <hibernate-core.version>5.4.7.Final</hibernate-core.version>
+        <hibernate-entitymanager.version>5.4.8.Final</hibernate-entitymanager.version>
+        <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
+        <hibernate-c3p0.version>5.4.7.Final</hibernate-c3p0.version>
+        <liquibase-core.version>3.8.0</liquibase-core.version>
+        <liquibase-hibernate5.version>3.8</liquibase-hibernate5.version>
+        <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
+        <java.version>8</java.version>
+        <guava.version>18.0</guava.version>
+        <log4j.version>2.12.1</log4j.version>
+
+        <liquibase-maven-plugin.version>3.8.0</liquibase-maven-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+        <changeLogFile>src/main/resources/data/changelog/db.changelog-master.xml</changeLogFile>
+        <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache-commons.version}</version>
+        </dependency>
+
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-entitymanager.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-impl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${hibernate-c3p0.version}</version>
+        </dependency>
+
+        <!-- Liquibase -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liquibase-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.liquibase.ext</groupId>
+            <artifactId>liquibase-hibernate5</artifactId>
+            <version>${liquibase-hibernate5.version}</version>
+        </dependency>
+
+        <!-- MySQL Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- Log4j2 API -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>db-rebuild</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-maven-plugin</artifactId>
+                        <version>${liquibase-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>release-changelog</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>dropAll</goal>
+                                    <goal>update</goal>
+                                </goals>
+                                <configuration>
+                                    <changeLogFile>${changeLogFile}</changeLogFile>
+                                    <propertyFileWillOverride>true</propertyFileWillOverride>
+                                    <propertyFile>${propertyFile}</propertyFile>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>db-update</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-maven-plugin</artifactId>
+                        <version>${liquibase-maven-plugin.version}</version>
+                        <configuration>
+                            <changeLogFile>${changeLogFile}</changeLogFile>
+                            <propertyFileWillOverride>true</propertyFileWillOverride>
+                            <propertyFile>${propertyFile}</propertyFile>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>db-rollback</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-maven-plugin</artifactId>
+                        <version>${liquibase-maven-plugin.version}</version>
+                        <configuration>
+                            <changeLogFile>${changeLogFile}</changeLogFile>
+                            <propertyFileWillOverride>true</propertyFileWillOverride>
+                            <propertyFile>${propertyFile}</propertyFile>
+                            <rollbackCount>1</rollbackCount>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>rollback</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase-maven-plugin.version}</version>
+                <configuration>
+                    <changeLogFile>${changeLogFile}</changeLogFile>
+                    <propertyFileWillOverride>true</propertyFileWillOverride>
+                    <propertyFile>${propertyFile}</propertyFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>release-changelog</id>
+                        <phase>process-resources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
