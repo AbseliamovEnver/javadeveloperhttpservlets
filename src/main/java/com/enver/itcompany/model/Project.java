@@ -1,9 +1,6 @@
 package com.enver.itcompany.model;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Set;
 
@@ -15,25 +12,27 @@ public class Project extends AbstractEntity {
     @Column(name = "budget", nullable = false)
     private BigDecimal budget;
 
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @OneToMany(mappedBy = "project", fetch = FetchType.EAGER)
     private Set<Team> teams;
 
     public Project() {
     }
 
-    public Project(BigDecimal budget, Set<Team> teams) {
-        this.budget = budget;
-        this.teams = teams;
-    }
-
-    public Project(String name, BigDecimal budget, Set<Team> teams) {
+    public Project(String name, BigDecimal budget, Customer customer, Set<Team> teams) {
         super(name);
         this.budget = budget;
+        this.customer = customer;
         this.teams = teams;
     }
 
-    public Project(long id, String name, BigDecimal budget, Set<Team> teams) {
+    public Project(long id, String name, BigDecimal budget, Customer customer, Set<Team> teams) {
         super(id, name);
         this.budget = budget;
+        this.customer = customer;
         this.teams = teams;
     }
 
@@ -43,6 +42,14 @@ public class Project extends AbstractEntity {
 
     public void setBudget(BigDecimal budget) {
         this.budget = budget;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Set<Team> getTeams() {

@@ -34,7 +34,7 @@
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="Async"/>
         </Logger>
-        <Logger name="com.abseliamov" level="debug" additivity="false">
+        <Logger name="com.enver" level="debug" additivity="false">
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="Async"/>
         </Logger>

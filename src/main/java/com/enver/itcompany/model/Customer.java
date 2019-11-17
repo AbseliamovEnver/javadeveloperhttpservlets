@@ -1,16 +1,14 @@
 package com.enver.itcompany.model;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "customers")
-@AttributeOverride(name = "id", column = @Column(name = "customers_id"))
+@AttributeOverride(name = "id", column = @Column(name = "customer_id"))
 public class Customer extends AbstractEntity {
 
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     private Set<Project> projects;
 
     public Customer() {
