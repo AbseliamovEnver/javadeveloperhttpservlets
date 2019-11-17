@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="insert_customers" author="enver">
+        <insert tableName="customers">
+            <column name="name" value="Gold Bank"/>
+        </insert>
+        <insert tableName="customers">
+            <column name="name" value="E-shop"/>
+        </insert>
+        <insert tableName="customers">
+            <column name="name" value="Google play"/>
+        </insert>
+        <insert tableName="customers">
+            <column name="name" value="Press"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_projects" author="enver">
+        <insert tableName="projects">
+            <column name="name" value="Internet Banking"/>
+            <column name="budget" value="10000"/>
+            <column name="customer_id" value="1"/>
+        </insert>
+        <insert tableName="projects">
+            <column name="name" value="Online shopping"/>
+            <column name="budget" value="5000"/>
+            <column name="customer_id" value="2"/>
+        </insert>
+        <insert tableName="projects">
+            <column name="name" value="Mobile application"/>
+            <column name="budget" value="1000"/>
+            <column name="customer_id" value="3"/>
+        </insert>
+        <insert tableName="projects">
+            <column name="name" value="Info press"/>
+            <column name="budget" value="500"/>
+            <column name="customer_id" value="4"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_teams" author="enver">
+        <insert tableName="teams">
+            <column name="name" value="Bank_team"/>
+            <column name="project_id" value="1"/>
+        </insert>
+        <insert tableName="teams">
+            <column name="name" value="Shop_team"/>
+            <column name="project_id" value="2"/>
+        </insert>
+        <insert tableName="teams">
+            <column name="name" value="Mobile_team"/>
+            <column name="project_id" value="3"/>
+        </insert>
+        <insert tableName="teams">
+            <column name="name" value="Article_team"/>
+            <column name="project_id" value="4"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_skills" author="enver">
+        <insert tableName="skills">
+            <column name="name" value="HTML5"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="CSS"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="React"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="Java"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="C++"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="JavaScript"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="PHP"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="AJAX"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="MS Windows"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="Mac OS"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="Linux"/>
+        </insert>
+        <insert tableName="skills">
+            <column name="name" value="Python"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_specialties" author="enver">
+        <insert tableName="specialties">
+            <column name="specialty" value="Frontend Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="Angular Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="React Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="Java Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="C++ Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="JavaScript Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="PHP Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="Unity Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="Android Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="iOS Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="Database Developer"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="specialty" value="QA Developer"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_users" author="enver">
+        <insert tableName="users">
+            <column name="first_name" value="Ivan"/>
+            <column name="last_name" value="Ivanov"/>
+            <column name="team_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Petr"/>
+            <column name="last_name" value="Petrov"/>
+            <column name="team_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Sidr"/>
+            <column name="last_name" value="Sidorov"/>
+            <column name="team_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Bruce"/>
+            <column name="last_name" value="Eckel"/>
+            <column name="team_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Bill"/>
+            <column name="last_name" value="Gates"/>
+            <column name="team_id" value="3"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Steve"/>
+            <column name="last_name" value="Jobs"/>
+            <column name="team_id" value="3"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Stephen"/>
+            <column name="last_name" value="Wozniak"/>
+            <column name="team_id" value="4"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Donald"/>
+            <column name="last_name" value="Knuth"/>
+            <column name="team_id" value="4"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="Linus"/>
+            <column name="last_name" value="Torvalds"/>
+            <column name="team_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="first_name" value="James"/>
+            <column name="last_name" value="Gosling"/>
+            <column name="team_id" value="2"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_user_skills" author="enver">
+        <insert tableName="user_skills">
+            <column name="user_id" value="1"/>
+            <column name="skill_id" value="1"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="1"/>
+            <column name="skill_id" value="2"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="2"/>
+            <column name="skill_id" value="3"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="2"/>
+            <column name="skill_id" value="4"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="3"/>
+            <column name="skill_id" value="5"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="3"/>
+            <column name="skill_id" value="6"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="4"/>
+            <column name="skill_id" value="1"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="4"/>
+            <column name="skill_id" value="6"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="5"/>
+            <column name="skill_id" value="7"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="5"/>
+            <column name="skill_id" value="8"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="6"/>
+            <column name="skill_id" value="9"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="6"/>
+            <column name="skill_id" value="10"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="7"/>
+            <column name="skill_id" value="11"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="7"/>
+            <column name="skill_id" value="12"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="8"/>
+            <column name="skill_id" value="3"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="8"/>
+            <column name="skill_id" value="6"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="9"/>
+            <column name="skill_id" value="5"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="9"/>
+            <column name="skill_id" value="10"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="10"/>
+            <column name="skill_id" value="11"/>
+        </insert>
+        <insert tableName="user_skills">
+            <column name="user_id" value="10"/>
+            <column name="skill_id" value="2"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_user_specialties" author="enver">
+        <insert tableName="user_specialties">
+            <column name="user_id" value="1"/>
+            <column name="specialty_id" value="1"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="2"/>
+            <column name="specialty_id" value="2"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="3"/>
+            <column name="specialty_id" value="3"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="4"/>
+            <column name="specialty_id" value="4"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="5"/>
+            <column name="specialty_id" value="5"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="6"/>
+            <column name="specialty_id" value="6"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="7"/>
+            <column name="specialty_id" value="7"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="8"/>
+            <column name="specialty_id" value="8"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="9"/>
+            <column name="specialty_id" value="9"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="10"/>
+            <column name="specialty_id" value="10"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="1"/>
+            <column name="specialty_id" value="2"/>
+        </insert>
+        <insert tableName="user_specialties">
+            <column name="user_id" value="2"/>
+            <column name="specialty_id" value="3"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
