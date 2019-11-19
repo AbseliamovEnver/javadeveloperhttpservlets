@@ -5,8 +5,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "specialties")
-@AttributeOverride(name = "id", column = @Column(name = "specialty_id"))
-@AttributeOverride(name = "name", column = @Column(name = "specialty"))
+@AttributeOverrides({
+        @AttributeOverride(name = "id", column = @Column(name = "specialty_id")),
+        @AttributeOverride(name = "name", column = @Column(name = "specialty"))
+})
 public class Specialty extends AbstractEntity {
 
     @ManyToMany(fetch = FetchType.EAGER,

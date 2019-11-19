@@ -8,8 +8,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@AttributeOverride(name = "id", column = @Column(name = "user_id"))
-@AttributeOverride(name = "name", column = @Column(name = "first_name"))
+@AttributeOverrides({
+        @AttributeOverride(name = "id", column = @Column(name = "user_id")),
+        @AttributeOverride(name = "name", column = @Column(name = "first_name"))
+})
 public class User extends AbstractEntity {
 
     @Column(name = "last_name")
