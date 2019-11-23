@@ -14,6 +14,14 @@ public class Customer extends AbstractEntity {
     public Customer() {
     }
 
+    public Customer(String name) {
+        super(name);
+    }
+
+    public Customer(long id, String name) {
+        super(id, name);
+    }
+
     public Customer(String name, Set<Project> projects) {
         super(name);
         this.projects = projects;

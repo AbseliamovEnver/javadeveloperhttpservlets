@@ -52,6 +52,18 @@ public class User extends AbstractEntity {
     public User() {
     }
 
+    public User(String name, String lastName, Team team) {
+        super(name);
+        this.lastName = lastName;
+        this.team = team;
+    }
+
+    public User(long id, String name, String lastName, Team team) {
+        super(id, name);
+        this.lastName = lastName;
+        this.team = team;
+    }
+
     public User(String name, String lastName, Team team, Set<Specialty> specialties, Set<Skill> skills) {
         super(name);
         this.lastName = lastName;

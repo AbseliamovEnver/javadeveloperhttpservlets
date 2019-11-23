@@ -22,6 +22,18 @@ public class Project extends AbstractEntity {
     public Project() {
     }
 
+    public Project(String name, BigDecimal budget, Customer customer) {
+        super(name);
+        this.budget = budget;
+        this.customer = customer;
+    }
+
+    public Project(long id, String name, BigDecimal budget, Customer customer) {
+        super(id, name);
+        this.budget = budget;
+        this.customer = customer;
+    }
+
     public Project(String name, BigDecimal budget, Customer customer, Set<Team> teams) {
         super(name);
         this.budget = budget;

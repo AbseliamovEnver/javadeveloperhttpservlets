@@ -18,6 +18,16 @@ public class Team extends AbstractEntity {
     public Team() {
     }
 
+    public Team(String name, Project project) {
+        super(name);
+        this.project = project;
+    }
+
+    public Team(long id, String name, Project project) {
+        super(id, name);
+        this.project = project;
+    }
+
     public Team(String name, Project project, Set<User> users) {
         super(name);
         this.project = project;
