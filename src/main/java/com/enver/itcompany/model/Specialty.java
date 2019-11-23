@@ -27,6 +27,14 @@ public class Specialty extends AbstractEntity {
     public Specialty() {
     }
 
+    public Specialty(String name) {
+        super(name);
+    }
+
+    public Specialty(long id, String name) {
+        super(id, name);
+    }
+
     public Specialty(String name, Set<User> users) {
         super(name);
         this.users = users;

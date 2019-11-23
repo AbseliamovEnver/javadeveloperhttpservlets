@@ -86,6 +86,7 @@ public abstract class AbstractDao<T> implements EntityInterface<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<T> getAll() {
         List<T> entities = null;
         try (Session session = sessionFactory.openSession()) {

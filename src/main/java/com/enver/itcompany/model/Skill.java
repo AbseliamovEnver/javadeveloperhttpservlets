@@ -24,6 +24,14 @@ public class Skill extends AbstractEntity {
     public Skill() {
     }
 
+    public Skill(String name) {
+        super(name);
+    }
+
+    public Skill(long id, String name) {
+        super(id, name);
+    }
+
     public Skill(String name, Set<User> users) {
         super(name);
         this.users = users;

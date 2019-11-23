@@ -10,7 +10,6 @@
     <packaging>war</packaging>
 
     <name>javadeveloperhttpservlets Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -19,7 +18,11 @@
         <maven.compiler.target>1.7</maven.compiler.target>
 
         <junit.version>4.11</junit.version>
+        <jstl.version>1.2</jstl.version>
         <apache-commons.version>3.5</apache-commons.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+        <servlet-api.vesrion>2.5</servlet-api.vesrion>
+        <javaee-web-api.version>8.0.1</javaee-web-api.version>
         <hibernate-core.version>5.4.7.Final</hibernate-core.version>
         <hibernate-entitymanager.version>5.4.8.Final</hibernate-entitymanager.version>
         <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
@@ -53,9 +56,37 @@
         </dependency>
 
         <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${apache-commons.version}</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-clean-plugin</artifactId>-->
+<!--            <version>${maven-clean-plugin.version}</version>-->
+<!--            <type>maven-plugin</type>-->
+<!--        </dependency>-->
+
+        <!-- JAVAX-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api.vesrion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>${javaee-web-api.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Hibernate -->
@@ -223,10 +254,10 @@
         <finalName>javadeveloperhttpservlets</finalName>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>${maven-clean-plugin.version}</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <artifactId>maven-clean-plugin</artifactId>-->
+<!--                    <version>${maven-clean-plugin.version}</version>-->
+<!--                </plugin>-->
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources-plugin.version}</version>
@@ -242,6 +273,9 @@
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
@@ -270,6 +304,16 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
