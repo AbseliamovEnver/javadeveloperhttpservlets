@@ -16,6 +16,12 @@
                 <div style="text-align: center">
                     <div class="panel-body">
                         <div class="row">
+                            <tr>
+                                <td>
+                                    <a class="btn btn-block btn-primary text-center h2" type="button"
+                                       href="index.jsp" role="link">Main menu</a>
+                                </td>
+                            </tr>
                             <table class="table table-bordered table-hover table-responsive[-sm|-md|-lg|-xl]">
                                 <thead class="bg-secondary">
                                     <tr>

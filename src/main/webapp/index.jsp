@@ -26,37 +26,37 @@
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="skill-main.jsp" role="link">Skill Management</a></td>
+                                           href="skill-main.jsp">Skill Management</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="specialty-main.jsp" role="link">Specialty Management</a></td>
+                                           href="specialty-main.jsp">Specialty Management</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="customer-main.jsp" role="link">Customer Management</a></td>
+                                           href="customer-main.jsp">Customer Management</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="project-main.jsp" role="link">Project Management</a></td>
+                                           href="project-main.jsp">Project Management</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="team-main.jsp" role="link">Team Management</a></td>
+                                           href="team-main.jsp">Team Management</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="user-main.jsp" role="link">User Management</a></td>
+                                           href="user-main.jsp">User Management</a>
                                     </td>
                                 </tr>
                             </tbody>
