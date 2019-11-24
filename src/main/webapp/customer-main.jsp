@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
-        <title>Skill Management</title>
+        <title>Customer Management</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=2">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
@@ -13,45 +12,39 @@
     <body>
         <div class="container">
             <div class="panel panel-primary">
-                <div class="text-center h3">Skill Management</div>
+                <div class="text-center h3">Customer Management</div>
                 <div style="text-align: center">
                     <div class="panel-body">
                         <div class="row">
-                            <tr>
-                                <td>
-                                    <a class="btn btn-block btn-primary text-center h2" type="button"
-                                       href="index.jsp" role="link">Main menu</a>
-                                </td>
-                            </tr>
                             <table class="table table-bordered table-hover table-responsive[-sm|-md|-lg|-xl]">
                                 <thead class="bg-secondary">
                                     <tr>
-                                        <th class="text-center h4">Skill CRUD Operations</th>
+                                        <th class="text-center h4">Customer CRUD Operations</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>
                                             <a class="btn btn-block btn-primary text-center h2" type="button"
-                                               href="skill-form.jsp" role="link">Add New Skill</a>
+                                               href="customer-form.jsp" role="link">Add New Customer</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <a class="btn btn-block btn-primary text-center h2" type="button"
-                                               href="skill-list.jsp" role="link">List of All Skills</a>
+                                               href="customer-list.jsp" role="link">List of All Customers</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <a class="btn btn-block btn-primary text-center h2" type="button"
-                                               href="skill-list.jsp" role="link">Edit Skill</a>
+                                               href="customer-list.jsp" role="link">Edit Customer</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <a class="btn btn-block btn-primary text-center h2" type="button"
-                                               href="skill-list.jsp" role="link">Delete Skill</a>
+                                               href="customer-list.jsp" role="link">Delete Customer</a>
                                         </td>
                                     </tr>
                                 </tbody>

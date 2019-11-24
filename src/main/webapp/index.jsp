@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"
          pageEncoding="UTF-8" isELIgnored="false" %>
-<%--<jsp:forward page="skill-list.jsp"></jsp:forward>--%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,25 +38,25 @@
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="skill-list.jsp" role="link">Customer Management</a></td>
+                                           href="customer-main.jsp" role="link">Customer Management</a></td>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="skill-list.jsp" role="link">Project Management</a></td>
+                                           href="project-main.jsp" role="link">Project Management</a></td>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="skill-list.jsp" role="link">Team Management</a></td>
+                                           href="team-main.jsp" role="link">Team Management</a></td>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <a class="btn btn-block btn-primary text-left" type="button"
-                                           href="skill-list.jsp" role="link">User Management</a></td>
+                                           href="user-main.jsp" role="link">User Management</a></td>
                                     </td>
                                 </tr>
                             </tbody>
