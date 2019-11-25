@@ -53,6 +53,12 @@
                                                href="project-list.jsp" role="link">Delete Project</a>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="btn btn-block btn-primary text-center h2" type="button"
+                                               href="project-edit-form.jsp" role="link">Edit Project</a>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
