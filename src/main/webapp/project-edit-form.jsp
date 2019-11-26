@@ -35,9 +35,9 @@
     </div>
 </div>
 <div align="center">
-<%--    <c:if test="${project != null}">--%>
-<%--    <form name="ProjectServlet" action="updateProject" method="post">--%>
-<%--        </c:if>--%>
+    <c:if test="${project != null}">
+    <form name="ProjectServlet" action="updateProject" method="post">
+        </c:if>
 <%--        <c:if test="${project == null}">--%>
 <%--        <form name="ProjectServlet" action="insertProject" method="post">--%>
 <%--            </c:if>--%>
@@ -64,15 +64,21 @@
                 <tr>
                     <th>Customer Name: </th>
                     <td>
-                        <form action="listCustomers" method="post">
-                            <select name="customer">
-                                <c:forEach var="customer" items="${listCustomers}">
-                                    <option value="${customer.id}"
-                                            <c:if test="${customer.id eq customer_id}">selected="selected"</c:if> >
-                                            ${customer.name}
-                                    </option>
-                                </c:forEach>
-                            </select>
+                        <form name="CustomerServletList" action="listCustomers" method="post">
+                            <label for="customer">
+                                <select id="customer" name="customer">
+<%--                                    <option value="First Choice">First Choice</option>--%>
+<%--                                    <option value="Second Choice">Second Choice</option>--%>
+<%--                                    <option value="Third Choice">Third Choice</option>--%>
+<%--                                    <option value="Fourth Choice">Fourth Choice</option>--%>
+                                    <c:forEach var="customer" items="${listCustomers}">
+                                        <option value="${customer.id}"
+                                                <c:if test="${customer.id eq customer_id}">selected="selected"</c:if> >
+                                                ${customer.name}
+                                        </option>
+                                    </c:forEach>
+                                </select>
+                            </label>
                         </form>
                     </td>
                 </tr>
@@ -83,7 +89,7 @@
                 </tr>
             </table>
 <%--        </form>--%>
-<%--    </form>--%>
+    </form>
 </div>
 </body>
 </html>

@@ -44,7 +44,7 @@ public class CustomerServletList extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        long customerId = Long.parseLong(request.getParameter("customer"));
+        long customerId = Long.parseLong(request.getParameter("customer_id"));
         request.setAttribute("customer_id", customerId);
         listCustomers(request, response);
     }
