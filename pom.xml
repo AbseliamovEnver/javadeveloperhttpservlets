@@ -23,7 +23,7 @@
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <servlet-api.vesrion>2.5</servlet-api.vesrion>
         <javaee-web-api.version>8.0.1</javaee-web-api.version>
-        <hibernate-core.version>5.4.7.Final</hibernate-core.version>
+        <hibernate-core.version>5.4.24.Final</hibernate-core.version>
         <hibernate-entitymanager.version>5.4.8.Final</hibernate-entitymanager.version>
         <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
         <hibernate-c3p0.version>5.4.7.Final</hibernate-c3p0.version>
